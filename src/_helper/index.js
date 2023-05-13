@@ -16,7 +16,7 @@ export function getTournament(id){
 }
 
 export function getImgUrl (){
-   return new URL('@/assets', import.meta.url).href;
+   return new URL('/assets', import.meta.url).href;
 }
 
 export function getStatusString(code, description){

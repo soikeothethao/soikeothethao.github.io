@@ -28,7 +28,7 @@
 </template>
 <script setup>
 import { BNavbar, BNavbarNav, BNavItem, BContainer, BRow, BCol, BImg, BCard, BInputGroup, BInputGroupAppend, BFormInput, BButton, BInputGroupText } from 'bootstrap-vue'
-import logo from '@/assets/image/logo.png'
+import logo from '/assets/image/logo.png'
 import { ref, onMounted, onUpdated } from 'vue'
 
 const mainProps = { width: 75, height: 75, class: 'm1' };
