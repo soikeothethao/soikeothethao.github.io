@@ -49,9 +49,12 @@
         <b-row>
         </b-row>
     </div>
+    <div v-else>
+        <b-skeleton animation="wave" width="100%"></b-skeleton>
+    </div>
 </template>
 <script>
-import { BRow, BCol, BButton, BTab } from 'bootstrap-vue'
+import { BRow, BCol, BButton, BTab, BSkeleton } from 'bootstrap-vue'
 import Incidents from '../TabContent/Incidents.vue';
 import LineUp from '../TabContent/LineUp.vue';
 import { mapState, mapActions, mapMutations } from "vuex";
@@ -66,7 +69,8 @@ export default {
     components: {
         BRow, BCol, BButton, BTab,
         Incidents,
-        LineUp
+        LineUp,
+        BSkeleton
     },
     computed: {
         ...mapState({

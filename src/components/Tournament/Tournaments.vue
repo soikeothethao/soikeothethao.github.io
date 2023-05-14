@@ -103,13 +103,14 @@ export default {
         ...mapMutations('events', ['setSelectedEvent']),
 
         async showEventInfo(event) {
+            if (this.$isMobile()) {
+                this.modalShow = !this.modalShow;
+            }
             this.setSelectedEvent({});
             await this.getIncidents(event.id);
             await this.getLineUp(event.id);
             this.setSelectedEvent(event);
-            if (this.$isMobile()) {
-                this.modalShow = !this.modalShow;
-            }
+
         }
     },
     computed: {
