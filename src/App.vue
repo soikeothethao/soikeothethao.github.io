@@ -15,9 +15,7 @@ export default {
 }
 </script>
 <template>
-  <div>
-    <template v-if="!$isMobile()">
-      <!-- <header>
+  <!-- <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -29,20 +27,20 @@ export default {
       </nav>
     </div>
   </header> -->
-      <b-row class="bg-main">
-        <RouterView />
-      </b-row>
-    </template>
-    <template v-else>
-      <div v-if="showIntro" class="intro d-flex align-items-center h-100">
-        <video autoplay muted @ended="onVideoEnded" class="intro-video">
-          <source src="assets/intro/intro.mp4" type="video/ogg">
-        </video>
-      </div>
-      <b-row class="bg-main">
-        <RouterView />
-      </b-row>
-    </template>
+  <div v-if="!$isMobile()">
+    <b-row class="bg-main">
+      <RouterView />
+    </b-row>
+  </div>
+  <div v-else>
+    <div v-if="showIntro" class="intro d-flex align-items-center h-100">
+      <video autoplay muted @ended="onVideoEnded" class="intro-video">
+        <source src="/assets/intro/intro.mp4" type="video/ogg">
+      </video>
+    </div>
+    <b-row class="bg-main">
+      <RouterView />
+    </b-row>
   </div>
 </template>
 
@@ -127,5 +125,6 @@ nav a:first-of-type {
   position: absolute;
   z-index: 1000;
   height: 100%;
+  width: 100%;
 }
 </style>
