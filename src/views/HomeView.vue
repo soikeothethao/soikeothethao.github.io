@@ -22,9 +22,9 @@
   </div>
   <div v-else>
     <Header></Header>
-    <BRow class="p-1">
+    <!-- <BRow class="p-1">
       <Calendar class="w-100"></Calendar>
-    </BRow>
+    </BRow> -->
     <BRow class="m-0 p-0">
       <!-- <b-col class="col-3 mr-2 p-1">
         <Calendar class="w-100"></Calendar>
