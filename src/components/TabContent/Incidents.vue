@@ -78,7 +78,7 @@
                 <template v-if="this.normalIncident.includes(incident.incidentType)">
                     <b-col class="incident-detail-away p-0 align-middle text-end">
                         <span class="p-1 player">{{ this.getSub('INCIDENT_TYPE',incident.incidentType)}} {{ this.getSub('INCIDENT_CLASS',incident.incidentClass)}}</span>
-                        <span class="p-1 player fw-bolder">{{incident.player.shortName}}</span>
+                        <span class="p-1 player fw-bolder">{{incident.player.shortName ?? incident.manager.shortName ?? ""}}</span>
                     </b-col>
                     <b-col class="incident-type-away col-2 text-end d-inline p-0"> 
                         <img :title="`${this.getSub('INCIDENT_TYPE',incident.incidentType)} ${ this.getSub('INCIDENT_CLASS',incident.incidentClass)}`" class="m-0" :src="`${getImgUrl()}/icon/${incident.incidentType}_${incident.incidentClass}.png`" width="25" center="true" round="5"/> 
