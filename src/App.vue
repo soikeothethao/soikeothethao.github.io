@@ -1,10 +1,23 @@
-<script setup>
+<script>
 import { RouterLink, RouterView } from 'vue-router'
 import { BRow } from 'bootstrap-vue'
+export default {
+  data() {
+    return {
+      showIntro: this.$isMobile() ? true : false
+    }
+  },
+  methods: {
+    onVideoEnded() {
+      this.showIntro = false;
+    }
+  }
+}
 </script>
-
 <template>
-  <!-- <header>
+  <div>
+    <template v-if="!$isMobile()">
+      <!-- <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -16,9 +29,21 @@ import { BRow } from 'bootstrap-vue'
       </nav>
     </div>
   </header> -->
-  <b-row class="bg-main">
-    <RouterView />
-  </b-row>
+      <b-row class="bg-main">
+        <RouterView />
+      </b-row>
+    </template>
+    <template v-else>
+      <div v-if="showIntro" class="intro d-flex align-items-center h-100">
+        <video autoplay muted @ended="onVideoEnded" class="intro-video">
+          <source src="assets/intro/intro.mp4" type="video/ogg">
+        </video>
+      </div>
+      <b-row class="bg-main">
+        <RouterView />
+      </b-row>
+    </template>
+  </div>
 </template>
 
 <style scoped>
@@ -90,5 +115,17 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   } */
+
+}
+
+.intro-video {
+  width: 100%;
+}
+
+.intro {
+  background-color: black;
+  position: absolute;
+  z-index: 1000;
+  height: 100%;
 }
 </style>
