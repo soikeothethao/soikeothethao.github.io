@@ -28,17 +28,17 @@ export default {
             let date = this.context.activeDate
             if (this.context.activeYMD !== this.stored_event_date) {
                 this.setEventDate(this.context.activeYMD);
-                if (date.toDateString() !== new Date().toDateString()) {
-                    // window.location.href = '/lich-thi-dau-ngay-' + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-                    router.push('/lich-thi-dau-ngay-' + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear())
-                    // router.push('/about')
-                    // window.location.reload()
-                } else {
-                    let slug = this.$route.params.dateString;
-                    if (slug && slug !== "/") {
-                        router.push('/')
-                    }
-                }
+                // if (date.toDateString() !== new Date().toDateString()) {
+                //     // window.location.href = '/lich-thi-dau-ngay-' + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+                //     router.push('/lich-thi-dau-ngay-' + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear())
+                //     // router.push('/about')
+                //     // window.location.reload()
+                // } else {
+                //     let slug = this.$route.params.dateString;
+                //     if (slug && slug !== "/") {
+                //         router.push('/')
+                //     }
+                // }
             }
 
         }
@@ -50,15 +50,16 @@ export default {
         }),
     },
     created() {
-        let slug = this.$route.params.dateString;
+        // let slug = this.$route.params.dateString;
 
-        if (slug && slug !== "") {
-            let dateString = slug.split('lich-thi-dau-ngay-')[1]
-            let datesplit = dateString.split('-');
-            this.event_date = new Date(datesplit[2], (datesplit[1] - 1), datesplit[0])
-        } else {
-            this.event_date = new Date()
-        }
+        // if (slug && slug !== "") {
+        //     let dateString = slug.split('lich-thi-dau-ngay-')[1]
+        //     let datesplit = dateString.split('-');
+        //     this.event_date = new Date(datesplit[2], (datesplit[1] - 1), datesplit[0])
+        // } else {
+        //     this.event_date = new Date()
+        // }
+        this.event_date = new Date()
     },
 }
 </script>

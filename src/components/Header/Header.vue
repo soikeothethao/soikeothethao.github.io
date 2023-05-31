@@ -28,10 +28,10 @@
 </template>
 <script setup>
 import { BNavbar, BNavbarNav, BNavItem, BContainer, BRow, BCol, BImg, BCard, BInputGroup, BInputGroupAppend, BFormInput, BButton, BInputGroupText } from 'bootstrap-vue'
-import logo from '/assets/image/logo.png'
 import { ref, onMounted, onUpdated } from 'vue'
 
 const mainProps = { width: 75, height: 75, class: 'm1' };
+const logo = new URL('/assets', import.meta.url).href + '/image/logo.png'
 // var search = "";
 // const el = ref();
 // onMounted(() => {

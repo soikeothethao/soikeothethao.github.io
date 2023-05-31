@@ -75,6 +75,60 @@ export const UNIQUE_TOURNAMENT_IDS = [17,19,1696,334,8,23,35]
 export const UNIQUE_TOURNAMENT_LIST = {
       uniqueTournaments: [
         {
+          name: "K League 1",
+          slug: "k-league-1",
+          category: {
+            name: "South Korea",
+            slug: "south-korea",
+            sport: {
+              name: "Football",
+              slug: "football",
+              id: 1
+            },
+            id: 291,
+            flag: "south-korea"
+          },
+          userCount: 11444,
+          id: 410,
+          displayInverseHomeAwayTeams: false
+        },
+        {
+          name: "J1 League",
+          slug: "j1-league",
+          category: {
+            name: "Japan",
+            slug: "japan",
+            sport: {
+              name: "Football",
+              slug: "football",
+              id: 1
+            },
+            id: 52,
+            flag: "japan"
+          },
+          userCount: 20470,
+          id: 196,
+          displayInverseHomeAwayTeams: false
+        },
+        {
+          name: "V-League 1",
+          slug: "v-league-1",
+          category: {
+            name: "Vietnam",
+            slug: "vietnam",
+            sport: {
+              name: "Football",
+              slug: "football",
+              id: 1
+            },
+            id: 366,
+            flag: "vietnam"
+          },
+          userCount: 4102,
+          id: 626,
+          displayInverseHomeAwayTeams: false
+        },
+        {
           name: "European Championship",
           slug: "european-championship",
           category: {
@@ -5620,7 +5674,7 @@ export const UNIQUE_TOURNAMENT_LIST = {
           userCount: 2,
           id: 16270,
           displayInverseHomeAwayTeams: false
-        }
+        },
       ],
       topUniqueTournamentIds: [
         732,
@@ -5685,6 +5739,11 @@ export const UNIQUE_TOURNAMENT_LIST = {
         230,
         // 384,
         1054,
-        16
+        16,
+        13,
+        291,
+        410,
+        196,
+        626
       ]
   }

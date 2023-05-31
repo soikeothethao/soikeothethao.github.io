@@ -21,6 +21,8 @@
                                 </b-col>
                                 <b-col class="col-3">
                                     <span class="home-team d-inline font-weight-700 m-2">{{eventItem.homeTeam.name}}</span>
+                                    <!-- <span>{{eventItem.homeTeam.slug}} -</span>
+                                    <span>{{eventItem.homeTeam.id}}</span> -->
                                 </b-col>
                                 <b-col class="col-2">
                                     <span class="home-point d-inline m-1">{{eventItem.homeScore.current}}</span>
@@ -30,6 +32,8 @@
                                 
                                 <b-col class="col-3">
                                     <span class="away-team d-inline font-weight-700 m-2">{{eventItem.awayTeam.name}}</span>
+                                    <!-- <span>{{eventItem.awayTeam.slug}} -</span>
+                                    <span>{{eventItem.awayTeam.id}}</span> -->
                                 </b-col>
                                 <b-col class="col-1">
                                     <b-img :src="`${getImgUrl()}/team-logo/${eventItem.awayTeam.slug}.png`" width="50%" center="true" round="5"></b-img>
@@ -122,22 +126,22 @@ export default {
         }),
     },
     async created() {
-        let slug = this.$route.params.dateString;
-        if (slug && slug !== "") {
-            let dateString = slug.split('lich-thi-dau-ngay-')[1]
-            let datesplit = dateString.split('-');
-            this.event_date = new Date(datesplit[2], (datesplit[1] - 1), datesplit[0])
-        } else {
-            this.event_date = new Date()
-        }
+        // let slug = this.$route.params.dateString;
+        // if (slug && slug !== "") {
+        //     let dateString = slug.split('lich-thi-dau-ngay-')[1]
+        //     let datesplit = dateString.split('-');
+        //     this.event_date = new Date(datesplit[2], (datesplit[1] - 1), datesplit[0])
+        // } else {
+        //     this.event_date = new Date()
+        // }
 
-        let yourDate = this.event_date;
-        let offset = yourDate.getTimezoneOffset()
-        let now = new Date(yourDate.getTime() - (offset * 60 * 1000))
-        await this.getEvents(now.toISOString().split('T')[0]);
-        this.events = this.stored_events;
-        this.eventsLength = Object.keys(this.events).length
-
+        // let yourDate = this.event_date;
+        // let offset = yourDate.getTimezoneOffset()
+        // let now = new Date(yourDate.getTime() - (offset * 60 * 1000))
+        // let now = new Date()
+        // await this.getEvents(now.toISOString().split('T')[0]);
+        // this.events = this.stored_events;
+        // this.eventsLength = Object.keys(this.events).length
 
         // await this.showEventInfo();
         // this.incidents = this.stored_incidents;
@@ -156,6 +160,11 @@ export default {
         },
         stored_lineUp(newData) {
             this.lineUp = this.stored_lineUp
+        },
+        async stored_event_date(newData) {
+            await this.getEvents(newData);
+            this.events = this.stored_events;
+            this.eventsLength = Object.keys(this.events).length
         }
     }
 }
