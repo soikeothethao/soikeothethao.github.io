@@ -43,7 +43,7 @@
                         </b-col>
                     </template>
                     <template v-else>
-                        <b-col class="col-2 pe-0 text-center"><span class="border-right border-dark">{{this.timestamptoDateTime(eventItem.startTimestamp)}}</span></b-col>
+                        <b-col class="col-2 p-0 text-center"><span class="small border-right border-dark">{{this.timestamptoDateTime(eventItem.startTimestamp)}}</span></b-col>
                         <b-col class="col-10 text-center d-inline">
                             <b-row>
                                 <!-- <b-col class="col-1 d-inline-block">
@@ -59,11 +59,11 @@
                                     <span class="away-point d-inline m-1">{{eventItem.awayScore.current}}</span>
                                 </b-col>
                                 
-                                <b-col class="col-4">
+                                <b-col class="col-4 p-0">
                                     <b-img :src="`${getImgUrl()}/team-logo/${eventItem.awayTeam.slug}.png`" width="50%" center="true" round="5"></b-img>
                                     <span class="away-team d-inline font-weight-700 m-2">{{eventItem.awayTeam.name}}</span>
                                 </b-col>
-                                <b-col class="col-2"> <span class="match-status small" :class="eventItem.status.type">{{this.getStatusString(eventItem.status.code, eventItem.status.description)}}</span></b-col>
+                                <b-col class="col-2 p-0"> <span class="match-status small" :class="eventItem.status.type">{{this.getStatusString(eventItem.status.code, eventItem.status.description)}}</span></b-col>
                             </b-row>
                         </b-col>
                     </template>
