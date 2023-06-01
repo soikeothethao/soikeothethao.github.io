@@ -75,6 +75,24 @@ export const UNIQUE_TOURNAMENT_IDS = [17,19,1696,334,8,23,35]
 export const UNIQUE_TOURNAMENT_LIST = {
       uniqueTournaments: [
         {
+          name: "FA Cup",
+          slug: "fa-cup",
+          category: {
+            name: "England",
+            slug: "england",
+            sport: {
+              name: "Football",
+              slug: "football",
+              id: 1
+            },
+            id: 1,
+            flag: "england"
+          },
+          userCount: 237392,
+          id: 19,
+          displayInverseHomeAwayTeams: false
+        },
+        {
           name: "K League 1",
           slug: "k-league-1",
           category: {
@@ -5744,6 +5762,7 @@ export const UNIQUE_TOURNAMENT_LIST = {
         291,
         410,
         196,
-        626
+        626,
+        19
       ]
   }
