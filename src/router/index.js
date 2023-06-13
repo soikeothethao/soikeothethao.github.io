@@ -7,6 +7,7 @@ const router = createRouter({
     {
       path: '/:dateString?',
       name: 'home',
+      view: 'HomeView',
       component: () => import('@/views/HomeView.vue')
     },
     {
@@ -20,6 +21,7 @@ const router = createRouter({
     {
       path: '/bang-xep-hang/:tournamentName',
       name: 'standing',
+      view: 'StandingView',
       component: () => import('@/views/StandingView.vue')
     },
   ]
