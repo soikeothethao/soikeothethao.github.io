@@ -1,6 +1,6 @@
 import {UNIQUE_TOURNAMENT_LIST, INCIDENT_TYPE, INCIDENT_CLASS, INCIDENT_REASON, ORTHER_TEXT} from '@/_constants'
 
-const uniqueTournamentData = UNIQUE_TOURNAMENT_LIST
+const uniqueTournamentData = UNIQUE_TOURNAMENT_LIST;
 
 function uniqueTounamentData (){ 
     var data =[];
@@ -47,8 +47,6 @@ export function timestamptoDateTime(timestamp){
     }else{
         return date.toLocaleTimeString();
     }
-
-    
 }
 
 export function getSub(type, key){
@@ -64,4 +62,16 @@ export function getSub(type, key){
         default:
             return key;
     }
+}
+
+export function getTopUniqueTournament(){
+    var tournamentData = uniqueTournamentData.uniqueTournaments;
+    var tournamentIDs = uniqueTournamentData.topUniqueTournamentIds;
+    var topUniqueData = [];
+    for(var item of tournamentData){
+        if(tournamentIDs.includes(item.id) && item.category.sport.id === 1){
+            topUniqueData.push(item)
+        }
+    }
+    return topUniqueData;
 }
